@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: #0a1a38; /* Deeper blue */
+  color: #f1f1f1;
+}
+
+/* Ticker */
+.ticker {
+  background: #000;
+  color: #ffd166;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: ticker 15s linear infinite;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Hero Section */
+.main-section {
+  background: linear-gradient(135deg, #0a1a38, #000);
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.name-side {
+  writing-mode: horizontal-tb;
+  font-size: 6em;
+  font-weight: bold;
+  color: #ede5e9;
+}
+
+.quote-center {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.quote {
+  font-size: 1.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ffffff;
+  animation: fadeIn 3s ease;
+}
+
+.floating-role {
+  font-size: 1.2em;
+  animation: floatData 4s ease-in-out infinite;
+  color: #e0e0e0;
+}
+
+@keyframes floatData {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.highlight {
+  color: #ffd166;
+}
+
+/* Sections */
+.section {
+  padding: 50px 20px;
+  background: #0f1f51;
+  border-top: 1px solid #333;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffeb3b;
+  font-size: 2em;
+}
+
+.section ul {
+  list-style: none;
+  text-align: center;
+}
+
+.section ul li {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+/* Skills */
+.skill-bar {
+  width: 80%;
+  margin: 15px auto;
+}
+
+.skill-bar span {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.bar {
+  height: 12px;
+  background: #2c3e50;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill-python   { width: 90%; background: #f72585; }
+.fill-sql      { width: 85%; background: #ffd166; }
+.fill-powerbi  { width: 80%; background: #06d6a0; }
+.fill-tableau  { width: 70%; background: #4cc9f0; }
+.fill-excel    { width: 75%; background: #90be6d; }
+
+/* Gallery */
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.photos img {
+  width: 350px;
+  border-radius: 20px;
+  transition: transform 0.4s;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.15);
+}
+
+.photos img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact */
+#contact a {
+  color: #ffd166;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Profile Photo */
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffd166;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Faded Background for Hero */
+.faded-bg {
+  background-image: url('images/profile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.overlay-filter {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(10, 26, 56, 0.85), rgba(0, 0, 0, 0.85));
+  z-index: 1;
+}
+
+.name-side,
+.quote-center {
+  position: relative;
+  z-index: 2;
+}
